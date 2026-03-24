@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trading-agents-free"
+version = "0.1.0"
+description = "LLM Multi-Agent Trading System using free tools only (Ollama + yfinance)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    # Core trading agents framework (from TauricResearch/TradingAgents)
+    "tradingagents @ git+https://github.com/TauricResearch/TradingAgents.git",
+    # Ollama integration via LangChain (Ollama exposes an OpenAI-compatible API)
+    "langchain-ollama>=0.3.0",
+    # Environment variable loading
+    "python-dotenv>=1.0.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["trading_agents_free*"]
